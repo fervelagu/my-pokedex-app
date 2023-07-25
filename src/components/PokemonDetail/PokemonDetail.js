@@ -39,13 +39,13 @@ const PokemonDetail = () => {
   const { name, number, normalFrontSprite, shinyFrontSprite, types, stats } = pokemonDetails
 
   return (
-    <div>
+    <div className="pokemon-card">
       <h2>{name}</h2>
       <p>Number: {number}</p>
-      <img src={normalFrontSprite} alt={name} />
-      <img src={shinyFrontSprite} alt={`${name} (Shiny)`} />
+      <img src={normalFrontSprite} alt={name} className="pokemon-image" />
+      <img src={shinyFrontSprite} alt={`${name} (Shiny)`} className="pokemon-image" />
       <p>Types:</p>
-      <ul>
+      <ul className="types-list">
         {types.map((type) => (
           <li key={type} className={`type-${type}`}>
             <Link to={`/pokemon/type/${type}`} className={`type-badge type-${type}`}>{type}</Link>
@@ -53,7 +53,7 @@ const PokemonDetail = () => {
         ))}
       </ul>
       <p>Stats:</p>
-      <ul>
+      <ul className="stats-list">
         {Object.entries(stats).map(([ statName, statValue ]) => (
           <li key={statName}>
             {statName}: {statValue}
