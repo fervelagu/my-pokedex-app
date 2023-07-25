@@ -1,0 +1,24 @@
+$type-colors: (
+  normal: #A8A77A,
+  fire: #EE8130,
+  water: #6390F0,
+  ice: #6390F0,
+  grass: green,
+  poison: black,
+);
+
+// Define common styles for the type badges
+@mixin type-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+@each $type, $color in $type-colors {
+  .type-#{$type} {
+    @include type-badge;
+    background-color: $color;
+    color: #fff;
+  }
+}
