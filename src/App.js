@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route exact path="/" element={<PokemonList />} />
+        <Route exact path="/my-pokedex-app/" element={<PokemonList />} />
         <Route path="/pokemon/:pokemonId" element={<PokemonDetail />} />
         <Route path="/pokemon/type/:type" element={<PokemonTypeList />} />
       </Routes>
